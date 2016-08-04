@@ -9,6 +9,7 @@
 #include <iostream>
 
 #include "GreedyAlgo.h"
+#include "chineseAndnumber.h"
 
 //！测试三种策略策略时候的场景
 void testFunc1()
@@ -37,6 +38,16 @@ void testFunc1()
     }
     GreadyAlgo(&problem, Choosefunc3);
 }
+
+
+void testFunc2(){
+
+    int number(10000000);
+    std::string chineseNumber;
+    NumberToChinese(number, chineseNumber);
+    std::cout << "中文数字： " << chineseNumber << std::endl;
+}
+
 
 
 void testFunc3(){

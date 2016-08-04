@@ -30,7 +30,7 @@ void GreadyAlgo( KNAPSACK_PROBLEM *problem, func spFunc )
     printResult( problem->objs);
 }
 
-//!根据最重的策略进行选择
+//!根据最重的进行选择
 int Choosefunc1( std::vector<OBJECT> &objs, int c)
 {
     int index = -1;
@@ -77,11 +77,14 @@ int Choosefunc3( std::vector<OBJECT> &objs, int c)
 
 void printResult(std::vector<OBJECT> &objs)
 {
+    int totalWeight(0);
     for (int i = 0; i < static_cast<int>(objs.size()); ++i)
     {
         if( 1 == objs[i].status )
         {
+            totalWeight += objs[i].weight;
             std::cout << "重量：" << objs[i].weight << "  价格：" << objs[i].price << std::endl;
         }
     }
+    std::cout << "总的重量：" << totalWeight << std::endl;
 }
