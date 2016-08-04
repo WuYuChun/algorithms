@@ -6,16 +6,16 @@
 #include "GreedyAlgo.h"
 
 //!总体解决思路
-void GreedyAlgo( KNAPSACK_PROBLEM *problem, func spFunc )
+void GreadyAlgo( KNAPSACK_PROBLEM *problem, func spFunc )
 {
     int idx = 0;
     int ntc = 0;
 
     //！每一次选最符合策略的那个物品，选中之后再进行检查
-    while( (idx = spFunc( problem->objs, problem->totalC-ntc)) != -1 )
+    while( (idx = spFunc( problem->objs, problem->totalc-ntc)) != -1 )
     {
         //!所选择的物品是否满足背包承重的要求
-        if( (ntc + problem->objs[idx].weight) <= problem->totalC )
+        if( (ntc + problem->objs[idx].weight) <= problem->totalc )
         {
             problem->objs[idx].status = 1;
             ntc += problem->objs[idx].weight;
@@ -37,22 +37,42 @@ int Choosefunc1( std::vector<OBJECT> &objs, int c)
     int mp = 0;
     for (int i = 0; i < static_cast<int>(objs.size()); ++i)
     {
-        mp = objs[i].price;
-        index = i;
+        if( ( 0 == objs[i].status ) && ( objs[i].weight >= mp ) )
+        {
+            mp = objs[i].weight;
+            index = i;
+        }
     }
     return index;
 }
 
-//!第二种策略
+//!根据价格最高的进行选择
 int Choosefunc2( std::vector<OBJECT> &objs, int c)
 {
-    return 0;
+    int index(-1);
+    int mp(0);
+    for (int i = 0; i < static_cast<int >(objs.size()) ; ++i) {
+        if( (0 == objs[i].status) && ( objs[i].price >= mp) ){
+            mp = objs[i].price;
+            index = i;
+        }
+    }
+    return index;
 }
 
-//!第三种策略
+//!根据性价比最高的进行选择
 int Choosefunc3( std::vector<OBJECT> &objs, int c)
 {
-    return 0;
+    int index(-1);
+    float mp(0.0);
+    for (auto i = 0; i < objs.size(); ++i) {
+        float wp = (float)objs[i].price / objs[i].weight;
+        if( (0 == objs[i].status) && (wp >= mp) ){
+            mp = wp;
+            index = i;
+        }
+    }
+    return index;
 }
 
 void printResult(std::vector<OBJECT> &objs)

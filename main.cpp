@@ -1,9 +1,10 @@
 #include <iostream>
-
+#include "unit_test.h"
 using namespace std;
 
 int main()
 {
-    cout << "Hello, World!" << endl;
+    testFunc1();
+    //testFunc3();
     return 0;
 }

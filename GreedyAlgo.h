@@ -14,13 +14,15 @@ typedef struct tagObject
     int weight;
     int price;
     int status; //0 未选中， 1 已选中 2 已经不能选（表示若选中的话将超出重量）
+    tagObject(int iweight, int iprice, int istatus):weight(iweight),price(iprice),status(istatus){
+    }
 }OBJECT;
 
 //！表示背包
 typedef struct tagKnapsackProblem
 {
     std::vector<OBJECT> objs;
-    int totalC;
+    int totalc;
 }KNAPSACK_PROBLEM;
 
 //!表示策略 定义为函数指针
