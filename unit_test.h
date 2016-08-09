@@ -15,6 +15,9 @@ void testFunc2();
 //！测试浮点数在内存中的结构
 void testFunc3();
 
+//!测试小巧的数字压缩算法
+void testFunc4();
+
 
 #endif //ALGORITHMS_UNIT_TEST_H
 

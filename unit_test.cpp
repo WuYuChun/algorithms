@@ -7,9 +7,11 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <math.h>
 
 #include "GreedyAlgo.h"
 #include "chineseAndnumber.h"
+#include "zipzap.h"
 
 //！测试三种策略策略时候的场景
 void testFunc1()
@@ -70,4 +72,35 @@ double get_seconds(){
     struct timespec ts;
     clock_gettime(CLOCK_PROCESS_CPUTIME_ID, &ts);
     return ts.tv_sec + ts.tv_nsec / 1e9;
+}
+
+void testFunc4(){
+
+#if 0
+    int zz = int_to_zigzag(-1);
+    int rr = zigzag_to_int(zz);
+#endif
+
+    int a[]={(int)(-pow(2L,32)),-1000, -1, 0, 1, 1000, (int)(pow(2L,31)-1L)};
+    for (int i = 0; i < sizeof(a) / sizeof(int) ; ++i) {
+        int n = a[i];
+        char str[INT_BIT_SIZE+INT_BIT_SIZE/BYTE_BITS+1];
+        int_to_binary_str(n,str,sizeof(str));
+
+        int zz = int_to_zigzag(n);
+        char str_zz[INT_BIT_SIZE+INT_BIT_SIZE/BYTE_BITS+1];
+        int_to_binary_str(zz,str_zz,sizeof(str_zz));
+
+        byte write_buffer[5];
+        int to_write_size = write_to_buffer(zz,write_buffer,sizeof(write_buffer));
+        char str_write[to_write_size * BYTE_BITS+ to_write_size +1];
+        bytes_to_binary_str(write_buffer,to_write_size,str_write, sizeof(str_write));
+
+        int read_num = read_from_buffer(write_buffer,to_write_size);
+
+        int last_num =zigzag_to_int(read_num);
+
+        printf("%11d [%s] ==to-zigzag==>  %6d [%s]  ====to-buf===>    %s\n",n,str,zz,str_zz,str_write);
+    }
+
 }
