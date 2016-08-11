@@ -18,6 +18,9 @@ void testFunc3();
 //!测试小巧的数字压缩算法
 void testFunc4();
 
+//!测试计算图像的相似度
+void testFunc5();
+
 
 #endif //ALGORITHMS_UNIT_TEST_H
 

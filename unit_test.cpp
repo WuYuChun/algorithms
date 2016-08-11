@@ -8,10 +8,12 @@
 #include <cstdlib>
 #include <iostream>
 #include <math.h>
+#include <opencv2/opencv.hpp>
 
 #include "GreedyAlgo.h"
 #include "chineseAndnumber.h"
 #include "zipzap.h"
+#include "imgHash.h"
 
 //！测试三种策略策略时候的场景
 void testFunc1()
@@ -102,5 +104,21 @@ void testFunc4(){
 
         printf("%11d [%s] ==to-zigzag==>  %6d [%s]  ====to-buf===>    %s\n",n,str,zz,str_zz,str_write);
     }
+
+}
+
+//！计算图像的相似度
+void testFunc5(){
+
+    cv::Mat img = cv::imread("../image/1.jpg");
+    if( img.empty() ){
+        std::cout << "open img Err!" << std::endl;
+    }
+
+    imgHash test(img);
+    long lRet(0);
+    lRet = test.getHashValue();
+
+    std::cout << "img Hash Value: " << lRet << std::endl;
 
 }
