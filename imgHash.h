@@ -25,7 +25,7 @@ public:
         ;
     }
 
-    int getHashValue();
+    unsigned long getHashValue();
 
 private:
 
@@ -34,7 +34,7 @@ private:
 private:
 
     cv::Mat m_img;
-    int m_hashValue;
+    unsigned long m_hashValue;
 };
 
 

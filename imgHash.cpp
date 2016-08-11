@@ -61,13 +61,15 @@ int imgHash::calueImgHash() {
         }
     }
 
+    std::cout << "bit set: " << hashVaule << std::endl;
+
     m_hashValue = hashVaule.to_ulong();
 
     return 0;
 }
 
 
-int imgHash::getHashValue() {
+unsigned long imgHash::getHashValue() {
 
     int iRet(0);
     iRet = calueImgHash();

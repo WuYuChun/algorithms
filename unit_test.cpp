@@ -116,7 +116,7 @@ void testFunc5(){
     }
 
     imgHash test(img);
-    long lRet(0);
+    unsigned long lRet(0);
     lRet = test.getHashValue();
 
     std::cout << "img Hash Value: " << lRet << std::endl;
