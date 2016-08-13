@@ -111,14 +111,35 @@ void testFunc4(){
 void testFunc5(){
 
     cv::Mat img = cv::imread("../image/1.jpg");
-    if( img.empty() ){
+
+    cv::Mat img2 = cv::imread("../image/2.jpeg");
+    if( img.empty() || img2.empty() ){
         std::cout << "open img Err!" << std::endl;
     }
 
     imgHash test(img);
     unsigned long lRet(0);
     lRet = test.getHashValue();
-
     std::cout << "img Hash Value: " << lRet << std::endl;
 
+    imgHash test2(img2);
+    unsigned long lRet2(0);
+    lRet2 = test2.getHashValue();
+    std::cout << "img2 Hash Value: " << lRet2 << std::endl;
+
+    std::cout << "相似度：　" << lRet2 - lRet << std::endl;
+
+}
+
+void testFunc6(){
+    int iTestNum[] = { -24,-6,-4,0,3,8,28 };
+    for (int i = 0; i < sizeof(iTestNum)/sizeof(iTestNum[0]); ++i) {
+        adjust8Mult(iTestNum[i]);
+    }
+}
+
+
+void testFunc7(){
+    calcDicePro();
+    std::cout << std::endl;
 }

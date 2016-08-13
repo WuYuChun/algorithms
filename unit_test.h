@@ -21,6 +21,12 @@ void testFunc4();
 //!测试计算图像的相似度
 void testFunc5();
 
+//!测试向下调整为８的倍数
+void testFunc6();
+
+
+//!测试两个色子之和的概率
+void testFunc7();
 
 #endif //ALGORITHMS_UNIT_TEST_H
 

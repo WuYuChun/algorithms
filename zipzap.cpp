@@ -98,3 +98,13 @@ int read_from_buffer(byte *buf, int max_size){
     }
     return ret;
 }
+
+//!向下调整为８的倍数 若是８的倍数就是不用改变了
+int adjust8Mult(int num){
+    std::bitset<32> origin(num);
+    std::cout << "input====> " << origin  << " : " << num << std::endl;
+    int iRet = num & -8;
+    std::bitset<32> last(iRet);
+    std::cout << "output===> " << last << " : " << iRet << std::endl;
+    return iRet;
+}

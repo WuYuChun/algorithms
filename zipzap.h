@@ -22,5 +22,8 @@ int write_to_buffer(int zz, byte *buf, int size);
 
 int read_from_buffer(byte *buf, int max_size);
 
+//!向下调整为８的倍数
+int adjust8Mult(int num);
+
 
 #endif //ALGORITHMS_ZIPZAP_H

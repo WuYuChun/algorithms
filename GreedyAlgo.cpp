@@ -88,3 +88,20 @@ void printResult(std::vector<OBJECT> &objs)
     }
     std::cout << "总的重量：" << totalWeight << std::endl;
 }
+
+
+void calcDicePro(){
+    enum{ SIDES = 6};
+    double sumDice[13]={0};
+    for(int i = 1; i <= 6; ++i){
+        for(int j = 1; j <= 6; ++j){
+            sumDice[i+j]+=1.0;
+        }
+    }
+
+    for(int i = 2; i <= 12; ++i){
+        sumDice[i] /= 36.0 ;
+        std::cout << sumDice[i]*100 << "% ";
+    }
+}
+

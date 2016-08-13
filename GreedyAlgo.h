@@ -43,4 +43,8 @@ int Choosefunc3( std::vector<OBJECT> &objs, int c);
 void printResult(std::vector<OBJECT> &);
 
 
+//!计算两个色子之和的概率分布
+void calcDicePro();
+
+
 #endif //ALGORITHMS_GREEDYALGO_H
