@@ -1,9 +1,14 @@
 #include <iostream>
 #include "unit_test.h"
+
+#include <glog/logging.h>
+
 using namespace std;
 
-int main()
+int main( int argc , char *argv[])
 {
+    google::InitGoogleLogging(argv[0]);
+    LOG(INFO) << "hhhh";
     std::cout << "===============================================================" << std::endl;
     testFunc1();
     std::cout << "===============================================================" << std::endl;
@@ -18,6 +23,8 @@ int main()
     testFunc6();
     std::cout << "===============================================================" << std::endl;
     testFunc7();
+    std::cout << "===============================================================" << std::endl;
+    testFunc8();
     std::cout << "===============================================================" << std::endl;
     return 0;
 }

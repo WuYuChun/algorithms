@@ -28,5 +28,8 @@ void testFunc6();
 //!测试两个色子之和的概率
 void testFunc7();
 
+//!测试自定义的缓冲区类
+void testFunc8();
+
 #endif //ALGORITHMS_UNIT_TEST_H
 

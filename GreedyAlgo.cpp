@@ -5,6 +5,8 @@
 #include <iostream>
 #include "GreedyAlgo.h"
 
+#include <streambuf>
+
 //!总体解决思路
 void GreadyAlgo( KNAPSACK_PROBLEM *problem, func spFunc )
 {
@@ -103,5 +105,27 @@ void calcDicePro(){
         sumDice[i] /= 36.0 ;
         std::cout << sumDice[i]*100 << "% ";
     }
+}
+
+
+//!编写自定义的streambuf用于自己的输出
+std::streambuf::int_type outbuf::overflow(int_type c) {
+
+    //std::cout << "overflow begin++++++++" << std::endl;
+
+    if(c!= EOF){
+        c = std::toupper(c);
+
+        //std::cout << "    toupper over++++++++++++++++++" << std::endl;
+
+        if(std::putchar(c) == EOF){
+            return EOF;
+        }
+    }
+    else{
+        //std::cout << "c == EOF" << std::endl;
+    }
+
+    return c;
 }
 

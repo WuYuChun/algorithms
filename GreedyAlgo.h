@@ -7,6 +7,7 @@
 #define ALGORITHMS_GREEDYALGO_H
 
 #include <vector>
+#include <streambuf>
 
 //！表示物品
 typedef struct tagObject
@@ -46,5 +47,10 @@ void printResult(std::vector<OBJECT> &);
 //!计算两个色子之和的概率分布
 void calcDicePro();
 
+//!自定义缓冲区类 streambuf
+class outbuf:public std::streambuf{
+protected:
+    virtual int_type overflow(int_type c);
+};
 
 #endif //ALGORITHMS_GREEDYALGO_H

@@ -7,6 +7,7 @@
 
 #include <cstdlib>
 #include <iostream>
+#include <streambuf>
 #include <math.h>
 #include <opencv2/opencv.hpp>
 
@@ -143,3 +144,11 @@ void testFunc7(){
     calcDicePro();
     std::cout << std::endl;
 }
+
+
+void testFunc8(){
+    outbuf ob;
+    std::ostream out(&ob);
+    out << "31 heaxdecimal: " << std::endl;
+}
+
