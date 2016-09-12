@@ -15,6 +15,7 @@
 #include "chineseAndnumber.h"
 #include "zipzap.h"
 #include "imgHash.h"
+#include "utility.h"
 
 //！测试三种策略策略时候的场景
 void testFunc1()
@@ -152,3 +153,9 @@ void testFunc8(){
     out << "31 heaxdecimal: " << std::endl;
 }
 
+
+void testFunc9(){
+    float val = 4.0;
+    float ret = FastInvSqrt(val);
+    std::cout << "快速计算倒平方根的值： " << ret << std::endl;
+}

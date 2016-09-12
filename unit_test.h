@@ -31,5 +31,8 @@ void testFunc7();
 //!测试自定义的缓冲区类
 void testFunc8();
 
+//!测试快速计算倒平方根函数
+void testFunc9();
+
 #endif //ALGORITHMS_UNIT_TEST_H
 

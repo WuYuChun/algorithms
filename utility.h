@@ -18,6 +18,12 @@
  */
 const char * const_basename(const char * filepath);
 
+/*
+ * prief:快速倒平方根算法
+ * param:float x
+ * ret: 返回倒平方根数
+ */
+float FastInvSqrt(float x);
 
 
 
