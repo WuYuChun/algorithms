@@ -56,3 +56,35 @@ void ratorWord(char *word, int n, int m){
         leftOneShift(word,n);
     }
 }
+
+
+//!用于翻转字符串
+void ReverseString(char *s, int from, int to){
+    while(from<to){
+        char t = s[from];
+        s[from++]=s[to];
+        s[to--]=t;
+    }
+}
+
+void LeftRotateString(char *s, int n, int m){
+    //若是左移动大于n位，那么%n是等价的
+    m %= n;
+    ReverseString(s,0,m-1);
+    ReverseString(s,m,n-1);
+    ReverseString(s,0,n-1);
+}
+
+//!用于字符串包含的问题
+bool StringContain(std::string &a, std::string &b){
+    for(int i =0; i < b.length(), ++i){
+        int j(0);
+        for(;j<a.length() && (a[j] != b[i]); ++j){
+            ;
+        }
+        if(j >= a.length()){
+            return false;
+        }
+    }
+    return true;
+}

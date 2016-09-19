@@ -9,6 +9,7 @@
 #include <vector>
 #include <streambuf>
 
+
 //！表示物品
 typedef struct tagObject
 {

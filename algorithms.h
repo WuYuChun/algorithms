@@ -37,4 +37,14 @@ void leftOneShift(char *word, int n);
  */
 void ratorWord(char *word, int n, int m);
 
+//用于反转字符串
+void ReverseString(char *s, int from, int to);
+void LeftRotateString(char *s, int n, int m);
+
+//!字符串的包含的问题
+bool StringContain1(std::string &a, std::string &b);
+bool StringContain2(std::string &a, std::string &b);
+bool StringContain3(std::string &a, std::string &b);
+bool StringContain4(std::string &a, std::string &b);
+
 #endif

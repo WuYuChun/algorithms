@@ -16,6 +16,7 @@
 #include "zipzap.h"
 #include "imgHash.h"
 #include "utility.h"
+#include "algorithms.h"
 
 //！测试三种策略策略时候的场景
 void testFunc1()
@@ -158,4 +159,13 @@ void testFunc9(){
     float val = 4.0;
     float ret = FastInvSqrt(val);
     std::cout << "快速计算倒平方根的值： " << ret << std::endl;
+}
+
+void testFunc10(){
+    char sz[]="abcdef";
+    std::cout << "origin sz:“" << sz << std::endl;
+    ratorWord(sz, 6, 3);
+    std::cout << "new sz: " << sz << std::endl;
+    LeftRotateString(sz,6,3);
+    std::cout << "rote: " << sz << std::endl;
 }

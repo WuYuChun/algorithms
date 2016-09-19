@@ -34,5 +34,8 @@ void testFunc8();
 //!测试快速计算倒平方根函数
 void testFunc9();
 
+//!测试字符串的旋转
+void testFunc10();
+
 #endif //ALGORITHMS_UNIT_TEST_H
 
